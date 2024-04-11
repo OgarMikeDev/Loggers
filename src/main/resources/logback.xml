@@ -22,7 +22,8 @@
             <onMismatch>DENY</onMismatch>
         </filter>
     </appender>
-    <appender name="DEBUG" class="ch.qos.logback.core.ConsoleAppender">
+
+    <appender name="OUTPUT_CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{ISO8601} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
@@ -34,8 +35,8 @@
     </appender>
 
     <root level="debug">
-        <appender-ref ref="STDERR_FILE" level="error" />
         <appender-ref ref="STDOUT_FILE" level="info" />
-        <appender-ref ref="DEBUG" level="debug" />
+        <appender-ref ref="STDERR_FILE" level="error" />
+        <appender-ref ref="OUTPUT_CONSOLE" level="debug" />
     </root>
 </configuration>
